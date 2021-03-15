@@ -1,0 +1,40 @@
+
+<form #seriesForm="ngForm" class="avenir pa4">
+  <h3>Add Series</h3>
+
+  <section class="mv3">
+    <label class="f5 db mb2 fw6">Name</label>
+    <input type="text" class="input-reset ba b--black-20 pa2 mb2 db w-80" [(ngModel)]="seriesFormData.name" name="name"/>
+  </section>
+
+  <section class="mv3">
+    <label class="f5 db mb2 fw6">ID</label>
+    <input type="text" class="input-reset ba b--black-20 pa2 mb2 db w-80" [(ngModel)]="seriesFormData.id" name="id"/>
+  </section>
+
+  <section class="mv3">
+    <label class="f5 db mb2 fw6">License </label>
+    <input type="radio" name="license" value="a" class="mr2" [(ngModel)]="seriesFormData.license" >A
+    <input type="radio" name="license" value="b" class="mr2" [(ngModel)]="seriesFormData.license" >B
+    <input type="radio" name="license" value="c" class="mr2" [(ngModel)]="seriesFormData.license" >C
+    <input type="radio" name="license" value="d" class="mr2" [(ngModel)]="seriesFormData.license" >D
+    <input type="radio" name="license" value="rookie" class="mr2" [(ngModel)]="seriesFormData.license" >Rookie
+  </section>
+
+  <section class="mv3">
+    <label class="f5 db mb2 fw6">Type</label>
+    <input type="radio" name="type" value="road" class="mr2" [(ngModel)]="seriesFormData.type" >Road
+    <input type="radio" name="type" value="oval" class="mr2" [(ngModel)]="seriesFormData.type" >Oval
+    <br /> <br />
+    <input type="checkbox" name="isDirt" class="mr2" [(ngModel)]="seriesFormData.isDirtSeries"/>Dirt series?
+  </section>
+
+  <section class="mv3">
+    <label class="f5 db mb2 fw6">Setup</label>
+    <input type="radio" name="isSetupOpen" value="false" class="mr2" [(ngModel)]="seriesFormData.isSetupOpen">Fixed
+    <input type="radio" name="isSetupOpen" value="true" class="mr2" [(ngModel)]="seriesFormData.isSetupOpen">Open
+  </section>
+
+  <button type="submit" class="pt1" (click)="addSeries(); seriesForm.reset();">Add Series</button>
+</form> 
+
